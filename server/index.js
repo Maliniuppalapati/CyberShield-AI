@@ -1,4 +1,4 @@
-require('dotenv').config();
+﻿require('dotenv').config();
 const express = require('express');
 const http = require('http');
 const mongoose = require('mongoose');
@@ -12,12 +12,7 @@ const threatRoutes = require('./routes/threats');
 const authRoutes = require('./routes/auth');
 const incidentRoutes = require('./routes/incidents');
 const aiRoutes = require('./routes/ai');
-const analyticsRoutes = require('./routes/analytics');
 const { startKeepAlive } = require('./services/keepAliveService');
-
-
-const networkRoutes = require('./routes/network');
-const adminRoutes = require('./routes/admin');
 const { protect, requireRole } = require('./middleware/authMiddleware');
 
 const app = express();
@@ -39,17 +34,11 @@ const io = new Server(server, {
 
 app.set('io', io);
 
-// Routes
+// Core Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/admin', adminRoutes); // Admin routes are protected internally by the route handlers
 app.use('/api/threats', protect, requireRole('user'), threatRoutes);
 app.use('/api/incidents', protect, requireRole('user'), incidentRoutes);
-
 app.use('/api/ai', aiRoutes);
-app.use('/api/analytics', protect, requireRole('user'), analyticsRoutes);
-
-app.use('/api/network', protect, requireRole('user'), networkRoutes);
-app.use('/api/qr', protect, requireRole('user'), require('./routes/qr'));
 
 app.get('/api/health', (req, res) => {
     const dbStatus = mongoose.connection.readyState === 1 ? 'connected' : 'disconnected';
@@ -78,13 +67,11 @@ const startServer = async () => {
         // Database Connection
         await connectDB();
 
-        // Initialize Socket Manager (Real-time Engine) after DB attempt
-        // Ideally we only run this if DB connected, or make it resilient
+        // Initialize Socket Manager (Real-time Engine)
         socketManager(io);
 
         server.listen(PORT, () => {
             console.log(`Server running on port ${PORT}`);
-            // Start Keep-Alive to wake up AI Engine
             startKeepAlive();
         });
     } catch (err) {
