@@ -1,20 +1,15 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
 import { cn } from '@/lib/utils';
 import {
   LayoutDashboard,
   Shield,
-  Globe,
-  Search,
-  QrCode,
-  BarChart3,
   AlertTriangle,
-  MessageSquare,
+  Mail,
   Settings,
   LogOut,
   ChevronLeft,
-  Mail,
   ChevronRight,
   Activity,
 } from 'lucide-react';
@@ -22,13 +17,8 @@ import {
 const navItems = [
   { icon: LayoutDashboard, label: 'Dashboard', path: '/' },
   { icon: Shield, label: 'Threat Feed', path: '/threats' },
-  { icon: Globe, label: 'Network Scan', path: '/network' },
-  { icon: Search, label: 'IP Verification', path: '/ip-check' },
-  { icon: QrCode, label: 'QR/Barcode Scan', path: '/qr-scan' },
-  { icon: BarChart3, label: 'Analytics', path: '/analytics' },
   { icon: AlertTriangle, label: 'Incidents', path: '/incidents' },
   { icon: Mail, label: 'Email Analyzer', path: '/email-analyzer' },
-  { icon: MessageSquare, label: 'AI Assistant', path: '/chat' },
 ];
 
 const Sidebar = () => {
@@ -114,17 +104,6 @@ const Sidebar = () => {
           >
             <LayoutDashboard className="h-5 w-5" />
             {!collapsed && <span className="font-medium text-sm">Admin Panel</span>}
-          </Link>
-          <Link
-            to="/admin/users"
-            className={cn(
-              'flex items-center gap-3 px-3 py-2.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-sidebar-accent transition-all',
-              location.pathname === '/admin/users' && 'bg-primary/10 text-primary',
-              collapsed && 'justify-center px-2'
-            )}
-          >
-            <Settings className="h-5 w-5" />
-            {!collapsed && <span className="font-medium text-sm">Users</span>}
           </Link>
         </div>
       )}

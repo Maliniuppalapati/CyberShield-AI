@@ -1,4 +1,4 @@
-import { Toaster } from "@/components/ui/toaster";
+﻿import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -6,12 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import Dashboard from "./pages/Dashboard";
 import ThreatFeed from "./pages/ThreatFeed";
-import NetworkScan from "./pages/NetworkScan";
-import IPCheck from "./pages/IPCheck";
-import QRScan from "./pages/QRScan";
-import Analytics from "./pages/Analytics";
 import Incidents from "./pages/Incidents";
-import AIChat from "./pages/AIChat";
 import EmailAnalyzer from "./pages/EmailAnalyzer";
 
 import Login from "./pages/Login";
@@ -22,7 +17,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { AuthProvider } from "@/context/AuthContext";
 import { ThreatProvider } from "@/context/ThreatContext";
 import AdminDashboard from "./pages/admin/AdminDashboard";
-import UserManagement from "./pages/admin/UserManagement";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
@@ -50,18 +44,12 @@ const App = () => {
                   <Route element={<ProtectedRoute />}>
                     <Route path="/" element={<Dashboard />} />
                     <Route path="/threats" element={<ThreatFeed />} />
-                    <Route path="/network" element={<NetworkScan />} />
-                    <Route path="/ip-check" element={<IPCheck />} />
-                    <Route path="/qr-scan" element={<QRScan />} />
-                    <Route path="/analytics" element={<Analytics />} />
                     <Route path="/incidents" element={<Incidents />} />
-                    <Route path="/chat" element={<AIChat />} />
                     <Route path="/email-analyzer" element={<EmailAnalyzer />} />
                     <Route path="/settings" element={<Settings />} />
 
                     {/* Admin Routes */}
                     <Route path="/admin/dashboard" element={<AdminDashboard />} />
-                    <Route path="/admin/users" element={<UserManagement />} />
                   </Route>
 
                   <Route path="*" element={<NotFound />} />
