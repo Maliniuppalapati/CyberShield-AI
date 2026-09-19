@@ -1,6 +1,6 @@
-﻿# 🛡️ CyberShield AI: Real-Time AI Threat Intelligence & Incident Response Platform
+﻿# CyberShield AI: Real-Time AI Threat Intelligence & Incident Response Platform
 
-An enterprise-grade, real-time Security Operations Center (SOC) dashboard designed for live threat monitoring, incident management, and automated AI phishing email forensics.
+An enterprise-grade, real-time Security Operations Center (SOC) dashboard designed for live threat monitoring, incident management, automated AI phishing email forensics, and interactive AI threat analysis.
 
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
@@ -10,22 +10,24 @@ An enterprise-grade, real-time Security Operations Center (SOC) dashboard design
 
 ---
 
-## 📌 Overview
+## 🛡️ Overview
 
-**CyberShield AI** simulates a modern Security Operations Center (SOC) environment. It enables security analysts to monitor incoming cyber attacks in real-time, track security incident lifecycles, and run automated AI-driven forensics on suspicious emails using LLM API microservices.
+**CyberShield AI** simulates a modern Security Operations Center (SOC) environment. It enables security analysts to monitor incoming cyber attacks in real-time, track security incident lifecycles, interact with an AI SOC assistant, and run automated AI-driven forensics on suspicious emails using LLM API microservices.
 
 Built from the ground up to demonstrate full-stack architecture, asynchronous real-time streaming, database management, and AI microservices integration.
 
 ---
 
-## 🚀 Key Features
+## ✨ Key Features
 
-* 📊 **Executive SOC Overview Dashboard**: Live visualization of attack metrics, threat maps, and server health.
+* 📊 **Executive SOC Overview Dashboard**: Live visualization of attack metrics, global threat maps, and server health.
 * ⚡ **Real-Time Global Threat Feed**: Zero-latency WebSocket streaming (`Socket.io`) pushing live attack alerts directly to the dashboard.
-* 🛡️ **Incident Management Workflow**: Full CRUD operations to convert live threats into official managed incidents with status tracking (`Open` ➔ `Investigating` ➔ `Resolved`) and timestamped notes in MongoDB.
-* 🤖 **AI Phishing Email Analyzer**: A dedicated Python microservice connected to LLM APIs (Groq `llama-3.3-70b-versatile`) performing forensic threat analysis on suspicious emails.
-* 🔐 **JWT Security & Role-Based Access Control**: Secure login/registration with `bcrypt` password encryption and token verification middleware.
-* 📥 **CSV Report Export**: Built-in capability to filter threat feeds and export reports to CSV format.
+* 🤖 **SOC AI Assistant**: Interactive AI assistant (`/chat`) connected to Groq LLM to assist analysts in understanding attack vectors and mitigation strategies.
+* 📧 **AI Phishing Email Analyzer**: A dedicated Python microservice connected to LLM APIs (`llama-3.3-70b-versatile`) performing forensic threat analysis on suspicious emails.
+* 📈 **Advanced Analytics**: Detailed breakdown of threat severity, MITRE ATT&CK framework mapping, and historical attack trends.
+* 📋 **Incident Management Workflow**: Full CRUD operations to convert live threats into official managed incidents with status tracking (`Open` → `Investigating` → `Resolved`) and timestamped notes in MongoDB.
+* 🔐 **JWT Security & Role-Based Access Control**: Secure login/registration with `bcrypt` password encryption, token verification middleware, and role separation (`admin` / `user`).
+* 📄 **CSV Report Export**: Built-in capability to filter threat feeds and export reports to CSV format.
 
 ---
 
@@ -38,7 +40,7 @@ Built from the ground up to demonstrate full-stack architecture, asynchronous re
 
 ---
 
-## 💻 Getting Started
+## 🚀 Getting Started
 
 ### 1. Clone the Repository
 ```bash
@@ -69,10 +71,10 @@ npm install
 npm run dev
 ```
 
-Access the dashboard at `http://localhost:5173`.
+Access the dashboard at `http://localhost:5173` or `http://localhost:8080`.
 
 ---
 
-## 🤝 Author
+## 👤 Author
 
 * **Geya Malini Uppalapati** - [GitHub](https://github.com/Maliniuppalapati)

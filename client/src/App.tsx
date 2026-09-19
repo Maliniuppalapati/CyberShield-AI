@@ -8,6 +8,8 @@ import Dashboard from "./pages/Dashboard";
 import ThreatFeed from "./pages/ThreatFeed";
 import Incidents from "./pages/Incidents";
 import EmailAnalyzer from "./pages/EmailAnalyzer";
+import AIChat from "./pages/AIChat";
+import Analytics from "./pages/Analytics";
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -46,6 +48,8 @@ const App = () => {
                     <Route path="/threats" element={<ThreatFeed />} />
                     <Route path="/incidents" element={<Incidents />} />
                     <Route path="/email-analyzer" element={<EmailAnalyzer />} />
+                    <Route path="/chat" element={<AIChat />} />
+                    <Route path="/analytics" element={<Analytics />} />
                     <Route path="/settings" element={<Settings />} />
 
                     {/* Admin Routes */}

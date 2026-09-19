@@ -33,6 +33,8 @@ const io = new Server(server, {
 });
 
 app.set('io', io);
+const analyticsRoutes = require('./routes/analytics');
+app.use('/api/analytics', protect, requireRole('user'), analyticsRoutes);
 
 // Core Routes
 app.use('/api/auth', authRoutes);

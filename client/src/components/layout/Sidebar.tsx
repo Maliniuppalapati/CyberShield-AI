@@ -7,6 +7,8 @@ import {
   Shield,
   AlertTriangle,
   Mail,
+  Bot,
+  BarChart3,
   Settings,
   LogOut,
   ChevronLeft,
@@ -19,6 +21,8 @@ const navItems = [
   { icon: Shield, label: 'Threat Feed', path: '/threats' },
   { icon: AlertTriangle, label: 'Incidents', path: '/incidents' },
   { icon: Mail, label: 'Email Analyzer', path: '/email-analyzer' },
+  { icon: Bot, label: 'AI Assistant', path: '/chat' },
+  { icon: BarChart3, label: 'Analytics', path: '/analytics' },
 ];
 
 const Sidebar = () => {
